@@ -1,62 +1,69 @@
-import {HomeIcon} from '@sanity/icons'
-import {defineField} from 'sanity'
+import { HomeIcon } from "@sanity/icons";
+import { defineField } from "sanity";
 
-const TITLE = 'Home'
+const TITLE = "Home";
 
 export default defineField({
-  name: 'home',
+  name: "home",
   title: TITLE,
-  type: 'document',
+  type: "document",
   icon: HomeIcon,
   groups: [
     {
       default: true,
-      name: 'editorial',
-      title: 'Editorial',
+      name: "editorial",
+      title: "Editorial",
     },
     {
-      name: 'seo',
-      title: 'SEO',
+      name: "seo",
+      title: "SEO",
     },
   ],
   fields: [
     // Hero
     defineField({
-      name: 'hero',
-      title: 'Hero',
-      type: 'hero.home',
-      group: 'editorial',
+      name: "hero",
+      title: "Hero",
+      type: "hero.home",
+      group: "editorial",
     }),
     // Modules
     defineField({
-      name: 'modules',
-      title: 'Modules',
-      type: 'array',
+      name: "modules",
+      title: "Modules",
+      type: "array",
       of: [
-        {type: 'module.callout'},
-        {type: 'module.callToAction'},
-        {type: 'module.collection'},
-        {type: 'module.image'},
-        {type: 'module.instagram'},
-        {type: 'module.product'},
+        { type: "module.callout" },
+        { type: "module.callToAction" },
+        { type: "module.collection" },
+        { type: "module.image" },
+        { type: "module.instagram" },
+        { type: "module.product" },
       ],
-      group: 'editorial',
+      group: "editorial",
     }),
     // SEO
     defineField({
-      name: 'seo',
-      title: 'SEO',
-      type: 'seo.home',
-      group: 'seo',
+      name: "seo",
+      title: "SEO",
+      type: "seo.home",
+      group: "seo",
+    }),
+    // MUI Theme
+    defineField({
+      name: "muiTheme",
+      title: "MUI Theme",
+      type: "materialUITheme",
+      group: "editorial",
     }),
   ],
   preview: {
     prepare() {
       return {
         // media: icon,
-        subtitle: 'Index',
+        subtitle: "Index",
         title: TITLE,
-      }
+      };
     },
   },
-})
+});
