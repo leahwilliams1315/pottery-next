@@ -53,7 +53,8 @@ export default defineField({
     defineField({
       name: "muiTheme",
       title: "MUI Theme",
-      type: "materialUITheme",
+      type: "reference",
+      to: [{ type: "materialUITheme" }],
       group: "editorial",
     }),
   ],
