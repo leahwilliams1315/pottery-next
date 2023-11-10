@@ -57,6 +57,14 @@ export default defineField({
       to: [{ type: "materialUITheme" }],
       group: "editorial",
     }),
+    //card
+    defineField({
+      name: "card",
+      title: "Card",
+      type: "array",
+      of: [{ type: "card" }],
+      group: "editorial",
+    }),
   ],
   preview: {
     prepare() {

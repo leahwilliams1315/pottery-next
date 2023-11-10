@@ -38,8 +38,9 @@ const singletons = [home, settings];
 
 // Block content
 import body from "./blocks/body";
+import { card } from "./objects/card";
 
-const blocks = [body];
+const blocks = [body, card];
 
 // Object types
 import customProductOptionColor from "./objects/customProductOption/color";

@@ -35,3 +35,25 @@ export async function getTheme() {
   const home = await sanityClient.fetch(query);
   return simplifyColorResponse(home.muiTheme);
 }
+
+export async function getHomePageCards() {
+  const query = `
+    *[_id == "home"][0]{
+      card[]{
+        ...,
+        image {
+          ..., 
+          asset->{
+            _id,
+            url
+          }
+        },
+        buttons[]{
+          ...
+        }
+      }
+    }
+  `;
+  const home = await sanityClient.fetch(query);
+  return home.card; // 'card' is the name of the field in the 'home' document
+}
