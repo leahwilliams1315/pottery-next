@@ -20,28 +20,6 @@ export default defineField({
     },
   ],
   fields: [
-    // Hero
-    defineField({
-      name: "hero",
-      title: "Hero",
-      type: "hero.home",
-      group: "editorial",
-    }),
-    // Modules
-    defineField({
-      name: "modules",
-      title: "Modules",
-      type: "array",
-      of: [
-        { type: "module.callout" },
-        { type: "module.callToAction" },
-        { type: "module.collection" },
-        { type: "module.image" },
-        { type: "module.instagram" },
-        { type: "module.product" },
-      ],
-      group: "editorial",
-    }),
     // SEO
     defineField({
       name: "seo",
@@ -57,12 +35,12 @@ export default defineField({
       to: [{ type: "materialUITheme" }],
       group: "editorial",
     }),
-    //card
+    //section
     defineField({
-      name: "card",
-      title: "Card",
+      name: "section",
+      title: "Section",
       type: "array",
-      of: [{ type: "card" }],
+      of: [{ type: "section" }],
       group: "editorial",
     }),
   ],

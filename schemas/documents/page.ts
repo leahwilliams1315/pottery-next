@@ -63,6 +63,14 @@ export default defineField({
       type: "body",
       group: "editorial",
     }),
+    //section
+    defineField({
+      name: "section",
+      title: "Section",
+      type: "array",
+      of: [{ type: "section" }],
+      group: "editorial",
+    }),
     // SEO
     defineField({
       name: "seo",

@@ -1,35 +1,35 @@
-import {defineField} from 'sanity'
+import { defineField } from "sanity";
 
 export default defineField({
-  name: 'hero.page',
-  title: 'Page hero',
-  type: 'object',
+  name: "hero.page",
+  title: "Slug hero",
+  type: "object",
   fields: [
     // Title
     defineField({
-      name: 'title',
-      title: 'Title',
-      type: 'text',
+      name: "title",
+      title: "Title",
+      type: "text",
       rows: 3,
     }),
     // Content
     defineField({
-      name: 'content',
-      title: 'Content',
-      type: 'array',
+      name: "content",
+      title: "Content",
+      type: "array",
       validation: (Rule) => Rule.max(1),
       of: [
         {
-          name: 'productWithVariant',
-          title: 'Product with variant',
-          type: 'productWithVariant',
+          name: "productWithVariant",
+          title: "Product with variant",
+          type: "productWithVariant",
         },
         {
-          name: 'imageWithProductHotspots',
-          title: 'Image',
-          type: 'imageWithProductHotspots',
+          name: "imageWithProductHotspots",
+          title: "Image",
+          type: "imageWithProductHotspots",
         },
       ],
     }),
   ],
-})
+});

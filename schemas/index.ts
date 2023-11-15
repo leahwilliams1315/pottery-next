@@ -16,19 +16,11 @@ const annotations = [
 
 // Document types
 import collection from "./documents/collection";
-import colorTheme from "./documents/colorTheme";
 import page from "./documents/page";
 import product from "./documents/product";
 import productVariant from "./documents/productVariant";
 
-const documents = [
-  collection,
-  // colorTheme,
-  page,
-  product,
-  productVariant,
-  MUITheme,
-];
+const documents = [collection, page, product, productVariant, MUITheme];
 
 // Singleton document types
 import home from "./singletons/home";
@@ -88,10 +80,12 @@ import shopifyCollection from "./objects/shopify/shopifyCollection";
 import shopifyCollectionRule from "./objects/shopify/shopifyCollectionRule";
 import shopifyProduct from "./objects/shopify/shopifyProduct";
 import shopifyProductVariant from "./objects/shopify/shopifyProductVariant";
+import { section } from "./objects/section";
 
 // Collections
 import collectionGroup from "./objects/collection/group";
 import collectionLinks from "./objects/collection/links";
+import { Schema } from "sanity";
 
 const objects = [
   customProductOptionColor,
@@ -141,7 +135,10 @@ const objects = [
   shopifyProductVariant,
   collectionGroup,
   collectionLinks,
+  section,
 ];
+
+export const sectionFields = [card];
 
 export const schemaTypes = [
   ...annotations,

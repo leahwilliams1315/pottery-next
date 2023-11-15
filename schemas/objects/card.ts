@@ -14,7 +14,7 @@ export const card = {
       title: "Image",
       type: "image",
       options: {
-        hotspot: true, // Enables hotspot for precise control over how images are cropped
+        hotspot: true,
       },
     },
     {
@@ -37,7 +37,7 @@ export const card = {
               type: "string",
             },
             {
-              name: "action", // You could reference an endpoint or define a function for onClick behavior
+              name: "action",
               title: "Action",
               type: "string",
               description: "Define the action to take on click",
@@ -54,7 +54,7 @@ export const card = {
     {
       name: "text",
       title: "Text",
-      type: "text", // 'text' for longer text fields or 'string' for shorter ones
+      type: "text",
     },
   ],
 };

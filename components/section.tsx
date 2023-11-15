@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 
 type SectionProps = {
   alignContent: "center" | "space-evenly";

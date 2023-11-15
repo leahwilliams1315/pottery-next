@@ -1,27 +1,28 @@
-import {defineConfig, isDev} from 'sanity'
+import { defineConfig, isDev } from "sanity";
 
-import {deskTool} from 'sanity/desk'
-import {schemaTypes} from './schemas'
-import {structure} from './desk'
+import { deskTool } from "sanity/desk";
+import { schemaTypes } from "./schemas";
+import { structure } from "./desk";
 
-import {visionTool} from '@sanity/vision'
-import {colorInput} from '@sanity/color-input'
-import {imageHotspotArrayPlugin} from 'sanity-plugin-hotspot-array'
-import {media, mediaAssetSource} from 'sanity-plugin-media'
-import {customDocumentActions} from './plugins/customDocumentActions'
+import { visionTool } from "@sanity/vision";
+import { imageHotspotArrayPlugin } from "sanity-plugin-hotspot-array";
+import { media, mediaAssetSource } from "sanity-plugin-media";
+import { customDocumentActions } from "./plugins/customDocumentActions";
+// @ts-ignore
+import { colorInput } from "@sanity/color-input";
 
-const devOnlyPlugins = [visionTool()]
+const devOnlyPlugins = [visionTool()];
 
 export default defineConfig({
-  name: 'default',
-  title: 'pottery-next',
+  name: "default",
+  title: "pottery-next",
 
-  projectId: 'q5nld2yr',
-  dataset: 'production',
+  projectId: "q5nld2yr",
+  dataset: "production",
   basePath: "/studio",
 
   plugins: [
-    deskTool({structure}),
+    deskTool({ structure }),
     colorInput(),
     imageHotspotArrayPlugin(),
     customDocumentActions(),
@@ -36,13 +37,17 @@ export default defineConfig({
   form: {
     file: {
       assetSources: (previousAssetSources) => {
-        return previousAssetSources.filter((assetSource) => assetSource !== mediaAssetSource)
+        return previousAssetSources.filter(
+          (assetSource) => assetSource !== mediaAssetSource,
+        );
       },
     },
     image: {
       assetSources: (previousAssetSources) => {
-        return previousAssetSources.filter((assetSource) => assetSource === mediaAssetSource)
+        return previousAssetSources.filter(
+          (assetSource) => assetSource === mediaAssetSource,
+        );
       },
     },
   },
-})
+});

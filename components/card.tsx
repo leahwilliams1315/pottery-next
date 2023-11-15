@@ -18,15 +18,7 @@ type CardProps = {
   title: string;
   text: string;
 };
-export const MediaCard = ({
-  isClickable,
-  image,
-  fullWidth,
-  buttons,
-  title,
-  text,
-}: CardProps) => {
-  debugger;
+export const MediaCard = (props: CardProps) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -37,15 +29,15 @@ export const MediaCard = ({
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {title}
+            {props.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {text}
+            {props.text}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        {buttons?.map((button) => (
+        {props.buttons?.map((button) => (
           <Button key={button.label} size="small">
             {button.label}
           </Button>

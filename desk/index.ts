@@ -38,6 +38,7 @@ const hiddenDocTypes = (listItem: ListItemBuilder) => {
     "productVariant",
     "settings",
     "card",
+    "section",
   ].includes(id);
 };
 
